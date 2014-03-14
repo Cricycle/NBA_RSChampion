@@ -1,0 +1,44 @@
+view-source:http://scores.espn.go.com/nba/scoreboard?date=20140310 <<---- gets data for that day
+<div class="game-status"> all stuff we want below </div>
+<p class="team-name"><...><a href="...">actual name</a></span></p>
+looking for <li class="finalScore">####</li>
+
+
+More research:
+http://stackoverflow.com/questions/2793150/how-to-use-java-net-urlconnection-to-fire-and-handle-http-requests (see apache links at bottom)
+http://jsoup.org/
+http://stackoverflow.com/questions/3152138/what-are-the-pros-and-cons-of-the-leading-java-html-parsers/3154281#3154281
+http://stackoverflow.com/questions/2835505/how-to-scan-a-website-or-page-for-info-and-bring-it-into-my-program/2835555#2835555
+
+
+Team Names
+Disallow: /blazers/node/
+Disallow: /bobcats/node/
+Disallow: /bucks/node/
+Disallow: /bulls/node/
+Disallow: /cavaliers/node/
+Disallow: /celtics/node/
+Disallow: /clippers/node/
+Disallow: /grizzlies/node/
+Disallow: /hawks/node/
+Disallow: /heat/node/
+Disallow: /jazz/node/
+Disallow: /kings/node/
+Disallow: /knicks/node/
+Disallow: /lakers/node/
+Disallow: /magic/node/
+Disallow: /mavericks/node/
+Disallow: /nets/node/
+Disallow: /nuggets/node/
+Disallow: /pacers/node/
+Disallow: /pelicans/node/
+Disallow: /pistons/node/
+Disallow: /raptors/node/
+Disallow: /rockets/node/
+Disallow: /sixers/node/
+Disallow: /spurs/node/
+Disallow: /suns/node/
+Disallow: /thunder/node/
+Disallow: /timberwolves/node/
+Disallow: /warriors/node/
+Disallow: /wizards/node/
