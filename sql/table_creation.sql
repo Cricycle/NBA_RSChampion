@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS nba_teams (
 
 CREATE TABLE IF NOT EXISTS nba_champions (
 	team_name		VARCHAR(32) REFERENCES nba_teams(team_name),
-	year			INT
+	year			INT PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS nba_game_data (

@@ -50,9 +50,15 @@ public class NBAGameDataMiner {
 				Element homeTeamP = homeTeam.getElementsByAttributeValue("class", "team-name").get(0);
 				String awayTeamName = awayTeamP.text();
 				String homeTeamName = homeTeamP.text();
+				int awayTeamScore = -1;
+				int homeTeamScore = -1;
 				
-				int awayTeamScore = Integer.parseInt(awayTeam.getElementsByAttributeValue("class", "finalScore").get(0).text());
-				int homeTeamScore = Integer.parseInt(homeTeam.getElementsByAttributeValue("class", "finalScore").get(0).text());
+				try {
+					awayTeamScore = Integer.parseInt(awayTeam.getElementsByAttributeValue("class", "finalScore").get(0).text());
+					homeTeamScore = Integer.parseInt(homeTeam.getElementsByAttributeValue("class", "finalScore").get(0).text());
+				} catch (Exception e) {
+					continue;
+				}
 				
 				NBAGameData game = new NBAGameData(homeTeamName, awayTeamName, homeTeamScore, awayTeamScore, gameDate);
 				list.add(game);
