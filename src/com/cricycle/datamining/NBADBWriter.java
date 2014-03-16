@@ -12,7 +12,7 @@ import java.util.Properties;
 
 public class NBADBWriter {
 	
-	private static String dbConnString = "jdbc:postgresql://localhost:5432/NBA";
+	private static String dbConnString = "jdbc:postgresql://%s:%s/%s";
 	private static String dbPropertiesFile = "database.properties";
 	private static String nbaChampionTable = "nba_champions";
 	private static String[] nbaChampionCols = {"team_name", "year"};
@@ -93,9 +93,10 @@ public class NBADBWriter {
 		boolean successful = false;
 		Connection conn = null;
 		SQLException excep = null;
+		String customDBConnString = String.format(dbConnString, props.getProperty("dbhost"), props.getProperty("dbport"), props.getProperty("dbname"));
 		while (failCount < 5 && !successful) {
 			try {
-				conn = DriverManager.getConnection(dbConnString, props);
+				conn = DriverManager.getConnection(customDBConnString, props);
 				successful = true;
 			} catch (SQLException e) {
 				excep = e;
